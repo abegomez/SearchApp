@@ -22,6 +22,7 @@ Use Project Clarity, Material design, or some modern design system.
 Demo
 Upload your code to Github for review and a build to Github Pages so we can run it live.
 
-Bonus Points- FacetingIf you use the ODN filters on the right, you can perform Solr
+Bonus Points- Faceting
+If you use the ODN filters on the right, you can perform Solr
 faceting.The fq parameter allows you to filter by facets. Implement faceting similar to ODN. -
 Use Typescript
