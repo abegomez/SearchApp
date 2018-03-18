@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\build",
+    "\\config",
+    "\\docs",
+    "\\src",
+    "\\src\\components",
+    "\\src\\router"
   ],
-  "SelectedNode": "\\vue.js",
+  "SelectedNode": "\\src\\components\\SearchBar.vue",
   "PreviewInSolutionExplorer": false
 }

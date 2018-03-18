@@ -8,9 +8,23 @@
 
 <script>
 import Navbar from './components/Navbar'
+import { tutorials as tutorialData } from './data'
 
 export default {
   name: 'App',
+  components: { TutorialList },
+  data: () => ({
+    tutorials: []
+  }),
+  methods: {
+    filterTutorials: function() {
+    // TODO filtering
+    this.tutorials = tutorialData
+    }
+  },
+  created: function() {
+    this.filterTutorials()
+  },
   components: {
     Navbar
   }
