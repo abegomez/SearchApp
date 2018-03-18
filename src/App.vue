@@ -8,6 +8,7 @@
 
 <script>
 import Navbar from './components/Navbar'
+import TutorialList from './components/TutorialList'
 import { tutorials as tutorialData } from './data'
 
 export default {
