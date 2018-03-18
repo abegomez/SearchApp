@@ -1,12 +1,17 @@
-<script>
-  import TutorialList from './TutorialList'
-  import Tutorial from './Tutorial'
+<template>
+  <div class="tutorial-list" :key="tutorials">
+    <Tutorial class="tutorial" v-for="tutorial in tutorials" :item="tutorial" :key="tutorial" />
+  </div>
+</template>
 
-  export default {
-    name: 'tutorial-list',
-    components: { Tutorial },
-    props ['tutorials']
-  }
+<script>
+import Tutorial from './Tutorial'
+
+export default {
+  name: 'tutorial-list',
+  components: { Tutorial },
+  props: ['tutorials']
+}
 </script>
 
 <style scoped>

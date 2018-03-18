@@ -12,6 +12,10 @@
     "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@fortawesome/vue-fontawesome": "0.0.22",
+    "bootstrap": "^4.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

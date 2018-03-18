@@ -2,7 +2,8 @@
   <div id="app">
     <Navbar />
     <img src="./assets/logo.png">
-    <router-view/>
+      <SearchBar v-model="searchTerm" />
+    <TutorialList :tutorials="pageOfTutorials" />
   </div>
 </template>
 
@@ -10,24 +11,49 @@
 import Navbar from './components/Navbar'
 import TutorialList from './components/TutorialList'
 import { tutorials as tutorialData } from './data'
+import SearchBar from './components/SearchBar'
 
 export default {
   name: 'App',
-  components: { TutorialList },
+  components: {
+    TutorialList,
+    Navbar,
+    SearchBar
+  },
   data: () => ({
-    tutorials: []
+    tutorials: [],
+    searchTerm: '',
+    page: 1
   }),
-  methods: {
-    filterTutorials: function() {
-    // TODO filtering
-    this.tutorials = tutorialData
+  watch: {
+    searchTerm: function () {
+      this.filterTutorials()
     }
   },
-  created: function() {
-    this.filterTutorials()
+  computed: {
+    pageOfTutorials: function () {
+      return this.tutorials
+    }
   },
-  components: {
-    Navbar
+  methods: {
+    filterTutorials: function () {
+      const searchTerm = this.searchTerm.toLowerCase()
+      let result = tutorialData
+
+      if (searchTerm) {
+        result = result.filter(tutorial => {
+          return (
+            tutorial.title.toLowerCase().search(searchTerm) >= 0 ||
+            tutorial.description.toLowerCase().search(searchTerm) >= 0
+          )
+        })
+      }
+      this.tutorials = result
+      this.page = 1
+    }
+  },
+  created: function () {
+    this.filterTutorials()
   }
 }
 </script>
@@ -39,6 +65,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 10px;
 }
 </style>
