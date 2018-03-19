@@ -3,9 +3,8 @@
       <form>
         <div class="form-group container">
             <!--<label for="search">What are you looking for?</label>-->
-            <input type="search" :name="name" v-model="searchTerm" class="form-control" placeholder="What are you looking for?"/>
+            <input type="search" :name="name" v-model="searchTerm" class="form-control" placeholder="What do you want to learn?"/>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Search</button>
       </form>
   </div>
 </template>
